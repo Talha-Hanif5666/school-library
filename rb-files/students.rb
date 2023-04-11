@@ -1,4 +1,4 @@
-require './persons'
+require_relative './persons'
 
 # Student class represents a student in a school.
 class Student < Person

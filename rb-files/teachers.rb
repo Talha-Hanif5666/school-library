@@ -1,4 +1,4 @@
-require './persons'
+require_relative './persons'
 # Teacher class represents a teacher in a school.
 class Teacher < Person
   def initialize(age, specialization, name = 'unknown', parent_permission: true)

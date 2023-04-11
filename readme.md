@@ -37,19 +37,44 @@ I made OOP School Library in this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 💻 Getting Started with database <a name="getting-started"></a>
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need: Ruby
+
 
 ### Setup
+Clone the repo, and install the dependencies
 
-Clone this [repository](https://github.com/Talha-Hanif5666/oop-school-library.git) to your desired folder:
+cd my-preferred-folder
 
+  git clone https://github.com/Talha-Hanif5666/school-library.git
+
+  cd school-library
+
+
+### Install
+
+Install this project with:
 ```sh
-  cd my-folder
-  git clone https://github.com/Talha-Hanif5666/oop-school-library.git 
-  cd oop-school-library
+bundle
+```
+
+
+
+
+### Usage
+
+To run the project, execute the following command:
+```sh
+ruby main.rb
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## 👥 Author <a name="authors"></a>
 
@@ -73,7 +98,7 @@ Clone this [repository](https://github.com/Talha-Hanif5666/oop-school-library.gi
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Talha-Hanif5666/oop-school-library/issues).
+Feel free to check the [issues page](https://github.com/Talha-Hanif5666/school-library/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
