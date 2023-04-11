@@ -1,6 +1,5 @@
-require './nameable'
 # Class Person Documentation
-class Person < Nameable
+class Person
   def initialize(age, name = 'unknown', parent_permission: true)
     @id = rand(1..1000)
     @name = name
@@ -13,10 +12,6 @@ class Person < Nameable
 
   def can_use_services?
     of_age? || @parent_permission
-  end
-
-  def correct_name
-    @name
   end
 
   private
