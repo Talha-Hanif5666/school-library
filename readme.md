@@ -37,44 +37,52 @@ I made OOP School Library in this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 💻 Getting Started <a name="getting-started"></a>
+## Getting Started
 
-To get a local copy up and running, follow these steps.
+To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-In order to run this project you need: Ruby
-
+- Git/GitHub;
+- Optional ( IDE installed in your machine ) - recommended IDE: Vscode;
+- Ruby Installed in your machine;
 
 ### Setup
-Clone the repo, and install the dependencies
 
-cd my-preferred-folder
-
-  git clone https://github.com/Talha-Hanif5666/school-library.git
-
-  cd school-library
-
+- To clone this repo:
+  - Open the Terminal(Mac/Linux) or the Cmd (Windows);
+  - Navigate to where you want to paste the Repo folder;
+  - Run the following commands
+```
+git clone https://github.com/Talha-Hanif5666/school-library.git
+cd OOP-School-Library
+```
 
 ### Install
-
-Install this project with:
-```sh
-bundle
 ```
-
-
-
+  bundle install
+```  
 
 ### Usage
+```
+irb
+```
+### Run tests
+```
+rspec spec
+```
+### Run Ruby file
 
-To run the project, execute the following command:
-```sh
-ruby main.rb
+```
+ruby ./rb-files/main.rb
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Key Features <a name="key-features"></a>
 
+- **[add_Person,Student,and_Teacher_classes]**
+- **[decorator_design_pattern]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Author <a name="authors"></a>
 
