@@ -1,10 +1,12 @@
 require_relative 'app'
-APP = App.new
+
 def main
+  app = App.new
+  puts 'Welcome to School Library App!'
   loop do
     display_menu
     user_choice = gets.chomp.to_i
-    handle_user_choice(user_choice)
+    handle_user_choice(user_choice, app)
   end
 rescue Interrupt
   warn "\nProgram exited"
@@ -22,27 +24,27 @@ def display_menu
   puts '7 - Exit'
 end
 
-def handle_user_choice(choice)
-  case choice
-  when 1
-    APP.list_books
-  when 2
-    APP.list_people
-  when 3
-    APP.create_person
-  when 4
-    APP.create_book
-  when 5
-    APP.create_rental
-  when 6
-    APP.list_rentals_by_person_id
-  when 7
-    puts 'Thank you for using this app!'
-    exit 0
+def handle_user_choice(choice, app)
+  menu_options = {
+    1 => :list_books,
+    2 => :list_people,
+    3 => :create_person,
+    4 => :create_book,
+    5 => :create_rental,
+    6 => :list_rentals_by_person_id,
+    7 => :exit_program
+  }
+
+  if menu_options.key?(choice)
+    app.send(menu_options[choice])
   else
     puts 'That is not a valid option'
   end
 end
 
-puts 'Welcome to School Library App!'
+def exit_program
+  puts 'Thank you for using this app!'
+  exit 0
+end
+
 loop { main }
