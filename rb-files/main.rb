@@ -1,18 +1,29 @@
 require_relative 'app'
-
 APP = App.new
-
 def main
-  puts "\nPlease choose an option by entering a number:
-1 - List all books
-2 - List all people
-3 - Create a person
-4 - Create a book
-5 - Create a rental
-6 - List all rentals for a given person id
-7 - Exit"
-  user_choice = gets.chomp.to_i
-  case user_choice
+  loop do
+    display_menu
+    user_choice = gets.chomp.to_i
+    handle_user_choice(user_choice)
+  end
+rescue Interrupt
+  warn "\nProgram exited"
+  exit 130
+end
+
+def display_menu
+  puts "\nPlease choose an option by entering a number:"
+  puts '1 - List all books'
+  puts '2 - List all people'
+  puts '3 - Create a person'
+  puts '4 - Create a book'
+  puts '5 - Create a rental'
+  puts '6 - List all rentals for a given person id'
+  puts '7 - Exit'
+end
+
+def handle_user_choice(choice)
+  case choice
   when 1
     APP.list_books
   when 2
@@ -31,11 +42,7 @@ def main
   else
     puts 'That is not a valid option'
   end
-rescue Interrupt
-  warn "\nProgram exited"
-  exit 130
 end
 
 puts 'Welcome to School Library App!'
-
 loop { main }
