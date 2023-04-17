@@ -110,4 +110,8 @@ class App
 
     puts 'No rentals found for the specified person ID' unless rentals_found
   end
+  def exit_program
+    puts 'Thank you for using this app!'
+    exit 0
+  end
 end
