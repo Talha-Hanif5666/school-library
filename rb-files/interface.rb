@@ -1,4 +1,4 @@
-require './app'
+require_relative './app'
 
 
 class Interface
@@ -29,8 +29,8 @@ end
     puts '6 - List all rentals for a given person id'
     puts '7 - Exit'
   end
-
   def handle_user_choice(choice, app)
+  
     menu_options = {
       1 => :list_books,
       2 => :list_people,
