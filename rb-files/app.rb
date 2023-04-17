@@ -26,7 +26,7 @@ class App
   end
 
   def create_person
-    print 'Do you want to Create a students (1) or a teacher (2)? [Input the number]: '
+    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     select_person = gets.chomp.to_i
     print 'Name: '
     name = gets.chomp
@@ -34,18 +34,26 @@ class App
     age = gets.chomp.to_i
     case select_person
     when 1
-      print 'Has parent permission? [Y/N]: '
-      permission = gets[0].capitalize
-      permission = permission == 'Y'
-      print 'What is the student\'s classroom? '
-      classroom = gets.chomp
-      @people.push(Student.new(age, name, permission, classroom))
+      create_student(name, age)
     when 2
-      print 'Specialization: '
-      specialization = gets.chomp
-      @people << Teacher.new(age, name, specialization)
+      create_teacher(name, age)
     end
     puts 'Person created successfully'
+  end
+
+  def create_student(name, age)
+    print 'Has parent permission? [Y/N]: '
+    permission = gets[0].capitalize
+    permission = permission == 'Y'
+    print 'What is the student\'s classroom? '
+    classroom = gets.chomp
+    @people.push(Student.new(age, name, permission, classroom))
+  end
+
+  def create_teacher(name, age)
+    print 'Specialization: '
+    specialization = gets.chomp
+    @people << Teacher.new(age, name, specialization)
   end
 
   def create_book
@@ -61,7 +69,7 @@ class App
     puts 'Select a book from the following list by number'
     @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
     book_index = gets.chomp.to_i
-    puts 'Select a person from the following list by number (not id)'
+    puts 'Select a person from the following list by number (not ID)'
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
