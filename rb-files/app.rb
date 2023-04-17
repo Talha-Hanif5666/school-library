@@ -11,9 +11,6 @@ class App
     @rentals = []
   end
 
-  def welcome
-    puts 'Welcome to School Library App!\n'
-  end
 
   def list_books
     if @books.empty?
@@ -23,15 +20,8 @@ class App
     end
   end
 
-  def show_person(person)
-    print "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    puts ", Specialization: #{person.specialization}" if person.is_a?(Teacher)
-    puts ", Classroom: #{person.classroom}" if person.instance_of?(Student)
-  end
-
   def list_people
     return puts 'No people found' if @people.empty?
-
     @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
   end
 
@@ -47,7 +37,6 @@ class App
       print 'Has parent permission? [Y/N]: '
       permission = gets[0].capitalize
       permission = permission == 'Y'
-      #   @people << Student.new(nil, age, name, permission)
       print 'What is the student\'s classroom? '
       classroom = gets.chomp
       @people.push(Student.new(age, name, permission, classroom))
@@ -62,10 +51,8 @@ class App
   def create_book
     print 'Title: '
     title = gets.chomp
-
     print 'Author: '
     author = gets.chomp
-
     @books << Book.new(title, author)
     puts 'Book created successfully'
   end
@@ -73,22 +60,14 @@ class App
   def create_rental
     puts 'Select a book from the following list by number'
     @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
-
     book_index = gets.chomp.to_i
-
-    puts
-
     puts 'Select a person from the following list by number (not id)'
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
-
     person_index = gets.chomp.to_i
-    puts
-
     print 'Date: '
     date = gets.chomp
-
     selected_person = @people[person_index]
     @rentals.push(Rental.new(date, @books[book_index], selected_person))
     puts 'Rental created successfully'
@@ -97,17 +76,14 @@ class App
   def list_rentals_by_person_id
     print 'ID of person: '
     id = gets.chomp.to_i
-
     puts 'Rentals:'
     rentals_found = false
-
     @rentals.each do |rental|
       if rental.person && rental.person.id == id && rental.book
         puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
         rentals_found = true
       end
     end
-
     puts 'No rentals found for the specified person ID' unless rentals_found
   end
 
