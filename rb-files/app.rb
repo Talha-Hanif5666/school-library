@@ -11,7 +11,6 @@ class App
     @rentals = []
   end
 
-
   def list_books
     if @books.empty?
       puts 'No books found'
@@ -22,6 +21,7 @@ class App
 
   def list_people
     return puts 'No people found' if @people.empty?
+
     @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
   end
 
