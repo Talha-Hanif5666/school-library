@@ -1,9 +1,13 @@
+require './app'
 class Menu
   def initialize(app)
     @app = app
   end
 
-  puts "Welcome to school library app!\n\n"
+  def welcome
+    puts "Welcome to school library app!\n\n"
+  end
+
   def menu
     puts
     puts 'Please choose an option by entering a number'
@@ -19,30 +23,49 @@ class Menu
     @list.each do |id, option|
       puts "#{id}: #{option}"
     end
-    gets.chomp.to_i
+  end
+  
+  def user_input
+    input = gets.chomp
+    input_is_valid?(input)
+  end
+
+  def input_is_valid?(input)
+    if %w[1 2 3 4 5 6 7].include?(input)
+      selected_option input
+    else
+      puts "#{input} isn't in the list! Try again"
+      menu
+    end
+  end
+
+  def selected_option(input)
+    case input.to_i
+    when 1
+      @app.list_books
+    when 2
+      @app.list_people
+    when 3
+      @app.create_person
+    when 4
+      @app.create_book
+    when 5
+      @app.create_rental
+    when 6
+      @app.list_rental_of_person
+    when 7
+      puts 'Thank you for using this app!'
+      exit
+    else
+      puts 'Please choose a number between 1 and 7'
+    end
   end
 
   def start
+    welcome
     loop do
-      case menu
-      when 1
-        @app.list_books
-      when 2
-        @app.list_people
-      when 3
-        @app.create_person
-      when 4
-        @app.create_book
-      when 5
-        @app.create_rental
-      when 6
-        @app.list_rental_of_person
-      when 7
-        puts 'Thank you for using this app!'
-        exit
-      else
-        puts 'Please choose a number between 1 and 7'
-      end
+      menu
+      user_input
     end
   end
 end
