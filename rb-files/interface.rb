@@ -24,7 +24,7 @@ class Menu
       puts "#{id}: #{option}"
     end
   end
-  
+
   def user_input
     input = gets.chomp
     input_is_valid?(input)

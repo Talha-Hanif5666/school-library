@@ -97,8 +97,6 @@ require_relative 'inputhandler'
 #   end
 # end
 
-
-
 class App
   def initialize
     @books = []
@@ -172,5 +170,4 @@ class App
     puts 'Thank you for using this app!'
     exit 0
   end
-
 end
