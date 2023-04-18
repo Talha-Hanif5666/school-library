@@ -92,6 +92,12 @@ ruby ./rb-files/main.rb
   - Twitter: [@twitterhandle](https://twitter.com/TalhaHa45039660?t=R4git6jFgsysI4xPxmN-ag&s=09)
   - LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammad-talha-hanif-6b1355116)
 
+  👤 **Raphael Okolo**
+
+- GitHub: [@RaphOkolo](https://github.com/RaphDasilva)
+- Twitter: [@RaphOkolo](https://twitter.com/RaphOkolo)
+- LinkedIn: [@RaphOkolo](https://www.linkedin.com/in/RaphOkolo/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
